@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-
+# 주의!!!
+# 과도한 크롤링은 서버에 부하를 줄 수 있습니다. 적절한 딜레이를 통해 서버에 부담을 줄이셔야 함을 알립니다.
 __author__ = 'onecue'
 
 import scrapy
@@ -7,6 +8,7 @@ import scrapy
 from community.items import CommunityItem
 from datetime import datetime
 import re
+import time
 
 class CommunitySpider(scrapy.Spider):
     name = "communityCrawler"
@@ -35,6 +37,7 @@ class CommunitySpider(scrapy.Spider):
 
             #print '='*50
             #print item['title']
+            time.sleep(5)
 
             yield item
 
@@ -63,6 +66,7 @@ class CommunitySpider(scrapy.Spider):
 
             #print '='*50
             #print item['title']
+            time.sleep(5)
 
             yield item
 
